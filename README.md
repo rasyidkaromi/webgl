@@ -22,7 +22,7 @@ see https://github.com/zserge/lorca for details
  </div>
 
 <div align="center" >
-<img  src="https://raw.githubusercontent.com/rasyidkaromi/webgl/master/screen.jpg"  width="780px"  />
+<img  src="https://raw.githubusercontent.com/rasyidkaromi/webgl/master/cast.jpg"  width="780px"  />
 </div>
   
   
