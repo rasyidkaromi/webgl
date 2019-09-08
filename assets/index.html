@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>WebGL Contoh</title>
+  <link rel="shortcut icon" href="favicon.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+	<div id="container"></div>
+	<div id="info">
+		Rasyid Karomi - WebGL
+	</div>
+
+	<script type="module">
+
+		import * as THREE from './three.module.js';
+		import Stats from './stats.module.js';
+		import { ColladaLoader } from './ColladaLoader.js';
+		import { OrbitControls } from './OrbitControls.js';
+
+		var container, stats, clock, controls;
+		var light1, light2, light3, light4;
+		var camera, scene, renderer, mixer;
+
+		init();
+		animate();
+		function init() {
+			container = document.getElementById('container');
+			camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 3, 2000);
+			camera.position.set(1020, 360, 400);
+			scene = new THREE.Scene();
+			clock = new THREE.Clock();
+			var loader = new ColladaLoader();
+			loader.load('./8.dae', function (collada) {
+				console.log(collada)
+				var avatar = collada.scene;
+				avatar.castShadow = true
+				avatar.receiveShadow = true
+				collada.scene.castShadow = true
+				collada.receiveShadow = true
+				collada.library.materials.ID6048.build.emissive.setHex(0xffffff)
+				collada.library.materials.ID6048.build.emissiveIntensity = 200
+				collada.library.materials.ID6048.build.lights = true
+				scene.add(collada.scene);
+
+			});
+			var sphere = new THREE.SphereBufferGeometry(0.5, 16, 8);
+
+			light1 = new THREE.PointLight(0xff0040, 5, 100);
+			light1.add(new THREE.Mesh(sphere, new THREE.MeshBasicMaterial({ color: 0xff0040 })));
+			scene.add(light1);
+
+			light2 = new THREE.PointLight(0x0040ff, 5, 100);
+			light2.add(new THREE.Mesh(sphere, new THREE.MeshBasicMaterial({ color: 0x0040ff })));
+			scene.add(light2);
+
+			light3 = new THREE.PointLight(0x80ff80, 5, 100);
+			light3.add(new THREE.Mesh(sphere, new THREE.MeshBasicMaterial({ color: 0x80ff80 })));
+			scene.add(light3);
+
+			light4 = new THREE.PointLight(0xffaa00, 5, 100);
+			light4.add(new THREE.Mesh(sphere, new THREE.MeshBasicMaterial({ color: 0xffaa00 })));
+			scene.add(light4);
+
+			renderer = new THREE.WebGLRenderer({ antialias: true });
+			renderer.setPixelRatio(window.devicePixelRatio);
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			container.appendChild(renderer.domElement);
+
+			controls = new OrbitControls(camera, renderer.domElement);
+			controls.screenSpacePanning = true;
+			controls.minDistance = 5;
+			controls.maxDistance = 2000;
+			controls.target.set(0, 2, 0);
+			controls.update();
+
+			stats = new Stats();
+			container.appendChild(stats.dom);
+			window.addEventListener('resize', onWindowResize, false);
+
+		}
+
+		function onWindowResize() {
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+		}
+
+		function animate() {
+			requestAnimationFrame(animate);
+			render();
+			stats.update();
+		}
+
+		function render() {
+			var delta = clock.getDelta();
+			var time = Date.now() * 0.0005;
+			if (mixer !== undefined) {
+				mixer.update(delta);
+			}
+
+			light1.position.x = Math.sin(time * 0.7) * 30;
+			light1.position.y = 100;
+			light1.position.z = Math.cos(time * 0.3) * 100;
+
+			light2.position.x = Math.cos(time * 0.3) * 50;
+			light2.position.y = 100;
+			light2.position.z = Math.sin(time * 0.7) * 100;
+
+			light3.position.x = Math.sin(time * 0.7) * 200;
+			light3.position.y = 100;
+			light3.position.z = Math.sin(time * 0.5) * 100;
+
+			light4.position.x = Math.sin(time * 0.3) * 100;
+			light4.position.y = 100;
+			light4.position.z = Math.sin(time * 0.5) * 200;
+
+			renderer.render(scene, camera);
+		}
+
+	</script>
+</body>
+</html>
