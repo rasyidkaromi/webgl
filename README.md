@@ -21,9 +21,7 @@ see https://github.com/zserge/lorca for details
   <br><br><br>
  </div>
 
-<div align="center" style="-webkit-box-shadow: 10px -14px 111px -23px rgba(0,0,0,0.75);
--moz-box-shadow: 10px -14px 111px -23px rgba(0,0,0,0.75);
-box-shadow: 10px -14px 111px -23px rgba(0,0,0,0.75);">
+<div align="center" style="box-shadow: 10px -14px 111px -23px rgba(0,0,0,0.75)">
 <img  src="https://raw.githubusercontent.com/rasyidkaromi/webgl/master/screen.jpg"  width="780px" style="-webkit-box-shadow: 10px -14px 111px -23px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px -14px 111px -23px rgba(0,0,0,0.75);
 box-shadow: 10px -14px 111px -23px rgba(0,0,0,0.75);" />
