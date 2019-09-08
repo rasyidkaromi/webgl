@@ -6,8 +6,7 @@ see https://github.com/zserge/lorca
 
 
 <div align="center">
-  ![](https://raw.githubusercontent.com/rasyidkaromi/webgl/master/screenshot.jpg)
-<img  src="https://raw.githubusercontent.com/rasyidkaromi/webgl/master/screenshot.jpg"  width="600px" />
+<img  src="https://raw.githubusercontent.com/rasyidkaromi/webgl/master/screenshot.jpg"  width="780px" />
 </div>
   
   
