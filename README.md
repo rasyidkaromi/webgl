@@ -7,6 +7,7 @@ HTML5 desktop apps in Go. It uses Chrome browser as a UI layer.
 see https://github.com/zserge/lorca for details
 
 
+      #windows
       first
       go run gen.go 
       for generate assets.go 
