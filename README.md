@@ -13,6 +13,8 @@ see https://github.com/zserge/lorca for details
       
       second 
       go build -ldflags "-H windowsgui" -o webgl.exe main.go. assets.go
+      
+      tester open webgl.exe for result
 
 
 <div>
