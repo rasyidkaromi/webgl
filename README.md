@@ -9,7 +9,7 @@ see https://github.com/zserge/lorca for details
 
       first
       go run gen.go 
-      for genereate assets.go 
+      for generate assets.go 
       
       second 
       go build -ldflags "-H windowsgui" -o webgl.exe main.go. assets.go
