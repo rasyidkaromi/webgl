@@ -1,4 +1,4 @@
-# WebGL tester Desktop Chrome Apps
+# GO WebGL tester Desktop Chrome Apps  
 
 tester WebGL Chrome App
 
