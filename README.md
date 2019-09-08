@@ -6,7 +6,7 @@ see https://github.com/zserge/lorca
 
 
 <div>
-<img align="left" src="https://raw.githubusercontent.com/rasyidkaromi/webgl/master/screenshot.jpg  />
+<img  src="https://raw.githubusercontent.com/rasyidkaromi/webgl/master/screenshot.jpg  width="600px" />
 </div>
   
   
