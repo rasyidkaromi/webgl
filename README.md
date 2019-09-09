@@ -2,7 +2,7 @@
 
 tester WebGL Chrome App
 
-Using Lorca for protected script and suport WebGL
+Using Lorca for protected script and support WebGL
 HTML5 desktop apps in Go. It uses Chrome browser as a UI layer.
 see https://github.com/zserge/lorca for details
 
